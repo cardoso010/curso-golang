@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"log"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -15,7 +16,7 @@ type usuario struct {
 func main() {
 	db, err := sql.Open("mysql", "root:01101993@/cursogo")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	defer db.Close()
 
